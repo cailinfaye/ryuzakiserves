@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フードプラグ</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <link rel="stylesheet" href="defaults.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+    <div class="backdrop" onclick="Addclass()"></div>
+    <header>
+        <nav class="nav-mobile">
+            <div class="nav-mobile__brand">
+                <div class="mobile-nav__logo-holder">
+                    <i class="fa-regular fa-hand-lizard"></i>
+                </div>
+                <span>フードプラグ</span>
+            </div>
+
+            <div class="hamburger-menu" onclick="Addclass()">
+                <div class="menubars"></div>
+            </div>
+
+            <div class="mobile__link-holder">
+                <ul>
+                    <li><a href="#" class="mobile__header-links active-link">ホーム</a></li>
+                    <li><a href="#aboutus" class="mobile__header-links">私たちについて</a></li>
+                    <li><a href="#explorefoods" class="mobile__header-links">料理を探る</a></li>
+                    <li><a href="#faq" class="mobile__header-links">よくある質問</a></li>
+                </ul>
+                <button class="btn">+81 (000) XXX-XXXX</button>
+            </div>
+        </nav>
+
+        <nav class="nav-desktop">
+            <div class="header-logo">
+                <i class="fa-regular fa-hand-lizard"></i>
+            </div>
+
+            <div class="link-holder">
+                <ul>
+                    <li><a href="#" class="header-links">ホーム</a></li>
+                    <li><a href="#aboutus" class="header-links">私たちについて</a></li>
+                    <li><a href="#explorefoods" class="header-links">料理を探る</a></li>
+                    <li><a href="#faq" class="header-links">よくある質問</a></li>
+                </ul>
+                <button class="btn btn-main">+81 (000) XXX-XXXX</button>
+            </div>
+        </nav>
+
+        <section class="header-banner">
+            <div class="header-banner__container">
+                <div class="header-banner-content">
+                    <h1>良い食事の選択は、良い投資です。</h1>
+                    <p>私たちは基本のチーズとバジルピザ（¥800）から、クラシックなピッツェリアまで、6種類の美味しいピザを提供しています。ミラノの中心で新しいピザを創作した「ピッツェリア デ ラ ナツィオナーレ」や、イタリア風のメニューが楽しめる「マドローネ」ピッツェリアなど、様々なスペシャリティピッツェリアもございます。</p>
+                    <button class="btn btn-light">もっと見る<i
+                            class="fa-solid fa-arrow-right-long banner-icon"></i></button>
+                    <button class="btn btn-main">今すぐ注文<i
+                            class="fa-solid fa-basket-shopping banner-icon"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="header__counter">
+            <div class="counter-item">
+                <h2>1287+</h2>
+                <p>節約</p>
+            </div>
+            <div class="counter-item">
+                <h2>6482+</h2>
+                <p>写真</p>
+            </div>
+            <div class="counter-item">
+                <h2>1004+</h2>
+                <p>ロケット</p>
+            </div>
+            <div class="counter-item">
+                <h2>1287+</h2>
+                <p>地球儀</p>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="about-us" id="aboutus">
+            <div class="about-us__card-container">
+                <div class="about-us__card-imageholder">
+                    <img src="./img/about1.png" alt="">
+                </div>
+                <div class="about-us__text-contentholder">
+                    <h2>最高の食材から<br />本物の料理を<br />作ることに誇りを持っています。</h2>
+                    <p>私たちは新鮮でグルテンフリーのメニューとデザートを提供しています。常に時間通りにお届けし、最高の状態でお客様に料理をお届けすることに専念しています。</p>
+                    <button class="btn btn-main">詳しく見る<i
+                            class="fa-solid fa-arrow-right-long cardicon"></i></button>
+                </div>
+            </div>
+
+            <div class="about-us__card-container">
+                <div class="about-us__text-contentholder">
+                    <h2>最高の食材で<br />手作りしています。</h2>
+                    <p>私たちと一緒に料理を作り、楽しみながらその過程を体験してみませんか？</p>
+                    <ul>
+                        <li> <i class="fa-solid fa-check check-icon"></i> パンツァネッラ</li>
+                        <li> <i class="fa-solid fa-check check-icon"></i> マッシュルームリゾット</li>
+                        <li> <i class="fa-solid fa-check check-icon"></i> パスタカボナーラ</li>
+                        <li> <i class="fa-solid fa-check check-icon"></i> カプレーゼサラダとペストソース</li>
+                    </ul>
+                    <button class="btn btn-main">詳しく見る<i
+                            class="fa-solid fa-arrow-right-long cardicon"></i></button>
+                </div>
+                <div class="about-us__card-imageholder">
+                    <img src="./img/about2.png" alt="">
+                </div>
+            </div>
+
+            <div class="about-us__banner-holder">
+                <h2>満腹になれば、富も貧困も関係ありません。</h2>
+                <p>本格的なイタリアン料理をお届けし、最高の食事体験を提供します。</p>
+                <button class="btn-waves"><i class="fa-solid fa-play"></i></button>
+            </div>
+        </section>
+
+        <section class="explore-foods" id="explorefoods">
+            <h2>料理を探る</h2>
+            <p>私たちの料理メニューをご覧ください。美味しくて栄養価の高い料理をお届けします。</p>
+            <div class="foodcard-container">
+                <div class="foodcard__item">
+                    <div class="foodcard__image-holder">
+                        <img src="./img/explore1.jpg" alt="レインボーベジタブルサンドイッチ">
+                    </div>
+                    <div class="foodcard__text-holder">
+                        <h4>レインボーベジタブルサンドイッチ</h4>
+                        <p>時間: 15 - 20 分 | 1人分</p>
+                        <h3>¥1200 <span>¥1350</span></h3>
+                        <button class="btn btn-main">今すぐ注文</button>
+                    </div>
+                </div>
+
+                <div class="foodcard__item">
+                    <div class="foodcard__image-holder">
+                        <img src="./img/explore2.jpg" alt="ベジタリアンバーガー">
+                    </div>
+                    <div class="foodcard__text-holder">
+                        <h4>ベジタリアンバーガー</h4>
+                        <p>時間: 30 - 45 分 | 1人分</p>
+                        <h3>¥1000 <span>¥1150</span></h3>
+                        <button class="btn btn-main">今すぐ注文</button>
+                    </div>
+                </div>
+
+                <div class="foodcard__item">
+                    <div class="foodcard__image-holder">
+                        <img src="./img/explore3.jpg" alt="ラズベリーフレンチトースト">
+                    </div>
+                    <div class="foodcard__text-holder">
+                        <h4>ラズベリーフレンチトースト</h4>
+                        <p>時間: 10 - 15 分 | 1人分</p>
+                        <h3>¥1350 <span>¥1500</span></h3>
+                        <button class="btn btn-main">今すぐ注文</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>急いで！ニュースレターに登録して<br>25%オフをゲット</h2>
+            <p>今月の期間限定オファーです。クレジットカードは不要です。</p>
+            <div class="cta__input-holder">
+                <input type="text" placeholder="xxxxxx@email.com">
+                <button class="btn">登録</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-copyright">
+            &copy; 2024 フードプラグ
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
