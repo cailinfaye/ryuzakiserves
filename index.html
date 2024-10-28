@@ -10,6 +10,54 @@
     <link rel="stylesheet" href="defaults.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="mobile.css">
+    <style>
+  /* Style for the modal background */
+  .modal-overlay2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    z-index: 1000;
+  }
+
+  /* Style for the modal box */
+  .modal-content2 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Style for the close button */
+  .close-btn2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  /* CSS to prevent scrolling */
+  .scroll-lock {
+    overflow: hidden;
+  }
+
+  /* Black text for modal heading and description */
+  .modal-content2 h2, .modal-content2 p {
+    color: black;
+  }
+</style>
 </head>
 
 <body>
@@ -185,6 +233,41 @@
     </footer>
 
     <script src="main.js"></script>
+<div class="modal-overlay2" id="modal2">
+  <div class="modal-content2">
+    <button class="close-btn2" id="close-btn2">X</button>
+    <h2>フードプラグ</h2>
+    <p>最高の食材から<br />本物の料理を<br />作ることに誇りを持っています</p>
+  </div>
+</div>
+    <script>
+  // Get the modal and close button elements
+  const modal = document.getElementById('modal2');
+  const closeButton = document.getElementById('close-btn2');
+  const modalContent = document.querySelector('.modal-content2');
+
+  // Disable scrolling on body when modal is visible
+  document.body.classList.add('scroll-lock');
+
+  // Function to close the modal and enable scrolling
+  function closeModal() {
+    modal.style.visibility = 'hidden';
+    document.body.classList.remove('scroll-lock');
+  }
+
+  // Close the modal if the close button is clicked
+  closeButton.addEventListener('click', closeModal);
+
+  // Close the modal if user clicks on the modal background (overlay)
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close the modal if user clicks on the modal body (content area)
+  modalContent.addEventListener('click', closeModal);
+</script>
 </body>
 
 </html>
