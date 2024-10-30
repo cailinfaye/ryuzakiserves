@@ -1,273 +1,475 @@
 <!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フードプラグ</title>
-    <link rel="stylesheet" href="./fontawesome/css/all.css">
-    <link rel="stylesheet" href="defaults.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="mobile.css">
+<html>
+  <head>
+    <title>ジムウェブサイトテンプレート</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <style>
-  /* Style for the modal background */
-  .modal-overlay2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: visible;
-    z-index: 1000;
-  }
+      .wow:first-child {
+        visibility: hidden;
+      }
+    </style>
+  </head>
 
-  /* Style for the modal box */
-  .modal-content2 {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    position: relative;
-  }
-
-  /* Style for the close button */
-  .close-btn2 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-
-  /* CSS to prevent scrolling */
-  .scroll-lock {
-    overflow: hidden;
-  }
-
-  /* Black text for modal heading and description */
-  .modal-content2 h2, .modal-content2 p {
-    color: black;
-  }
-</style>
-</head>
-
-<body>
-    <div class="backdrop" onclick="Addclass()"></div>
+  <body onload="location.href='#popupModal'">
+    <!-- Start Header  -->
     <header>
-        <nav class="nav-mobile">
-            <div class="nav-mobile__brand">
-                <div class="mobile-nav__logo-holder">
-                    <i class="fa-regular fa-hand-lizard"></i>
-                </div>
-                <span>フードプラグ</span>
-            </div>
-
-            <div class="hamburger-menu" onclick="Addclass()">
-                <div class="menubars"></div>
-            </div>
-
-            <div class="mobile__link-holder">
-                <ul>
-                    <li><a href="#" class="mobile__header-links active-link">ホーム</a></li>
-                    <li><a href="#aboutus" class="mobile__header-links">私たちについて</a></li>
-                    <li><a href="#explorefoods" class="mobile__header-links">料理を探る</a></li>
-                    <li><a href="#faq" class="mobile__header-links">よくある質問</a></li>
-                </ul>
-                <button class="btn">+81 (000) XXX-XXXX</button>
-            </div>
-        </nav>
-
-        <nav class="nav-desktop">
-            <div class="header-logo">
-                <i class="fa-regular fa-hand-lizard"></i>
-            </div>
-
-            <div class="link-holder">
-                <ul>
-                    <li><a href="#" class="header-links">ホーム</a></li>
-                    <li><a href="#aboutus" class="header-links">私たちについて</a></li>
-                    <li><a href="#explorefoods" class="header-links">料理を探る</a></li>
-                    <li><a href="#faq" class="header-links">よくある質問</a></li>
-                </ul>
-                <button class="btn btn-main">+81 (000) XXX-XXXX</button>
-            </div>
-        </nav>
-
-        <section class="header-banner">
-            <div class="header-banner__container">
-                <div class="header-banner-content">
-                    <h1>良い食事の選択は、良い投資です。</h1>
-                    <p>私たちは基本のチーズとバジルピザ（¥800）から、クラシックなピッツェリアまで、6種類の美味しいピザを提供しています。ミラノの中心で新しいピザを創作した「ピッツェリア デ ラ ナツィオナーレ」や、イタリア風のメニューが楽しめる「マドローネ」ピッツェリアなど、様々なスペシャリティピッツェリアもございます。</p>
-                    <button class="btn btn-light">もっと見る<i
-                            class="fa-solid fa-arrow-right-long banner-icon"></i></button>
-                    <button class="btn btn-main">今すぐ注文<i
-                            class="fa-solid fa-basket-shopping banner-icon"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <section class="header__counter">
-            <div class="counter-item">
-                <h2>1287+</h2>
-                <p>節約</p>
-            </div>
-            <div class="counter-item">
-                <h2>6482+</h2>
-                <p>写真</p>
-            </div>
-            <div class="counter-item">
-                <h2>1004+</h2>
-                <p>ロケット</p>
-            </div>
-            <div class="counter-item">
-                <h2>1287+</h2>
-                <p>地球儀</p>
-            </div>
-        </section>
-    </header>
-
-    <main>
-        <section class="about-us" id="aboutus">
-            <div class="about-us__card-container">
-                <div class="about-us__card-imageholder">
-                    <img src="./img/about1.png" alt="">
-                </div>
-                <div class="about-us__text-contentholder">
-                    <h2>最高の食材から<br />本物の料理を<br />作ることに誇りを持っています。</h2>
-                    <p>私たちは新鮮でグルテンフリーのメニューとデザートを提供しています。常に時間通りにお届けし、最高の状態でお客様に料理をお届けすることに専念しています。</p>
-                    <button class="btn btn-main">詳しく見る<i
-                            class="fa-solid fa-arrow-right-long cardicon"></i></button>
-                </div>
-            </div>
-
-            <div class="about-us__card-container">
-                <div class="about-us__text-contentholder">
-                    <h2>最高の食材で<br />手作りしています。</h2>
-                    <p>私たちと一緒に料理を作り、楽しみながらその過程を体験してみませんか？</p>
-                    <ul>
-                        <li> <i class="fa-solid fa-check check-icon"></i> パンツァネッラ</li>
-                        <li> <i class="fa-solid fa-check check-icon"></i> マッシュルームリゾット</li>
-                        <li> <i class="fa-solid fa-check check-icon"></i> パスタカボナーラ</li>
-                        <li> <i class="fa-solid fa-check check-icon"></i> カプレーゼサラダとペストソース</li>
-                    </ul>
-                    <button class="btn btn-main">詳しく見る<i
-                            class="fa-solid fa-arrow-right-long cardicon"></i></button>
-                </div>
-                <div class="about-us__card-imageholder">
-                    <img src="./img/about2.png" alt="">
-                </div>
-            </div>
-
-            <div class="about-us__banner-holder">
-                <h2>満腹になれば、富も貧困も関係ありません。</h2>
-                <p>本格的なイタリアン料理をお届けし、最高の食事体験を提供します。</p>
-                <button class="btn-waves"><i class="fa-solid fa-play"></i></button>
-            </div>
-        </section>
-
-        <section class="explore-foods" id="explorefoods">
-            <h2>料理を探る</h2>
-            <p>私たちの料理メニューをご覧ください。美味しくて栄養価の高い料理をお届けします。</p>
-            <div class="foodcard-container">
-                <div class="foodcard__item">
-                    <div class="foodcard__image-holder">
-                        <img src="./img/explore1.jpg" alt="レインボーベジタブルサンドイッチ">
-                    </div>
-                    <div class="foodcard__text-holder">
-                        <h4>レインボーベジタブルサンドイッチ</h4>
-                        <p>時間: 15 - 20 分 | 1人分</p>
-                        <h3>¥1200 <span>¥1350</span></h3>
-                        <button class="btn btn-main">今すぐ注文</button>
-                    </div>
-                </div>
-
-                <div class="foodcard__item">
-                    <div class="foodcard__image-holder">
-                        <img src="./img/explore2.jpg" alt="ベジタリアンバーガー">
-                    </div>
-                    <div class="foodcard__text-holder">
-                        <h4>ベジタリアンバーガー</h4>
-                        <p>時間: 30 - 45 分 | 1人分</p>
-                        <h3>¥1000 <span>¥1150</span></h3>
-                        <button class="btn btn-main">今すぐ注文</button>
-                    </div>
-                </div>
-
-                <div class="foodcard__item">
-                    <div class="foodcard__image-holder">
-                        <img src="./img/explore3.jpg" alt="ラズベリーフレンチトースト">
-                    </div>
-                    <div class="foodcard__text-holder">
-                        <h4>ラズベリーフレンチトースト</h4>
-                        <p>時間: 10 - 15 分 | 1人分</p>
-                        <h3>¥1350 <span>¥1500</span></h3>
-                        <button class="btn btn-main">今すぐ注文</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta">
-            <h2>急いで！ニュースレターに登録して<br>25%オフをゲット</h2>
-            <p>今月の期間限定オファーです。クレジットカードは不要です。</p>
-            <div class="cta__input-holder">
-                <input type="text" placeholder="xxxxxx@email.com">
-                <button class="btn">登録</button>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-copyright">
-            &copy; 2024 フードプラグ
+      <div class="container">
+        <div class="logo">
+          <a href="">フィットネス<span>クラブ</span></a>
         </div>
-    </footer>
+        <a href="javascript:void(0)" class="ham-burger">
+          <span></span>
+          <span></span>
+        </a>
+        <div class="nav">
+          <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#about">私たちについて</a></li>
+            <li><a href="#service">サービス</a></li>
+            <li><a href="#classes">クラス</a></li>
+            <li><a href="#schedule">スケジュール</a></li>
+            <li><a href="#price">料金</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- End Header  -->
 
-    <script src="main.js"></script>
-<div class="modal-overlay2" id="modal2">
-  <div class="modal-content2">
-    <button class="close-btn2" id="close-btn2">X</button>
-    <h2>フードプラグ</h2>
-    <p>最高の食材から<br />本物の料理を<br />作ることに誇りを持っています</p>
-  </div>
-</div>
+    <!-- Start Home -->
+    <section class="home wow flash" id="home">
+      <div class="container">
+        <h1 class="wow slideInLeft" data-wow-delay="1s">
+          ジムの<span>時間</span>です。さあ始めましょう！
+        </h1>
+        <h1 class="wow slideInRight" data-wow-delay="1s">
+          私たちはあなたにフィットする準備ができています
+        </h1>
+      </div>
+      <!-- go down -->
+      <a href="#about" class="go-down">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </a>
+      <!-- go down -->
+    </section>
+    <!-- End Home -->
+
+    <!-- Start About -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="content">
+          <div class="box wow bounceInUp">
+            <div class="inner">
+              <div class="img">
+                <img src="images/about1.jpg" alt="about" />
+              </div>
+              <div class="text">
+                <h4>無料相談</h4>
+                <p>
+                  私たちは、あなたがどのようにして効果的にフィットネスの目標を達成するかを理解するためのパーソナライズされた相談を提供しています。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="box wow bounceInUp" data-wow-delay="0.2s">
+            <div class="inner">
+              <div class="img">
+                <img src="images/about2.jpg" alt="about" />
+              </div>
+              <div class="text">
+                <h4>最高のトレーニング</h4>
+                <p>
+                  私たちの認定トレーナーは、減量、筋肉増加、または全般的なフィットネスを求めるあなたに最良のガイダンスを提供します。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="box wow bounceInUp" data-wow-delay="0.4s">
+            <div class="inner">
+              <div class="img">
+                <img src="images/about3.jpg" alt="about" />
+              </div>
+              <div class="text">
+                <h4>完璧な体を作りましょう</h4>
+                <p>
+                  私たちのトレーニングプログラムは、バランスの取れた強い体格を持続可能な方法で構築するために設計されています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About -->
+
+    <!-- Start Service -->
+    <section class="service" id="service">
+      <div class="container">
+        <div class="content">
+          <div class="text box wow slideInLeft">
+            <h2>サービス</h2>
+            <p>
+              私たちは、パーソナルトレーニング、グループクラス、最新のジム機器など、あなたのフィットネス目標を達成するための多様なサービスを提供しています。
+            </p>
+            <p>
+              カーディオから筋力トレーニング、ヨガ、柔軟性の向上まで、フィットネスを維持するために必要なすべてを提供しています。
+            </p>
+            <a href="" class="btn">今すぐ始める</a>
+          </div>
+          <div class="accordian box wow slideInRight">
+            <div class="accordian-container active">
+              <div class="head">
+                <h4>心肺機能トレーニング機器</h4>
+                <span class="fa fa-angle-down"></span>
+              </div>
+              <div class="body">
+                <p>
+                  私たちのカーディオエリアには、最新のランニングマシン、ステーショナリーバイク、エリプティカルが装備されており、心肺持久力を強化します。
+                </p>
+              </div>
+            </div>
+            <div class="accordian-container">
+              <div class="head">
+                <h4>筋力トレーニング機器</h4>
+                <span class="fa fa-angle-up"></span>
+              </div>
+              <div class="body">
+                <p>
+                  私たちの幅広いウェイトマシンとフリーウェイトで、筋肉を強化し、力をつけましょう。
+                </p>
+              </div>
+            </div>
+            <div class="accordian-container">
+              <div class="head">
+                <h4>グループフィットネスクラス</h4>
+                <span class="fa fa-angle-up"></span>
+              </div>
+              <div class="body">
+                <p>
+                  ヨガ、ズンバ、サーキットトレーニングなどのグループクラスに参加して、楽しくやる気を保ちながらトレーニングしましょう。
+                </p>
+              </div>
+            </div>
+            <div class="accordian-container">
+              <div class="head">
+                <h4>その他のサービス</h4>
+                <span class="fa fa-angle-up"></span>
+              </div>
+              <div class="body">
+                <p>
+                  パーソナルトレーニング、サウナ、栄養カウンセリングなど、全体的なフィットネスの旅をサポートするためのサービスも提供しています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Service -->
+
+    <!-- Start Classes -->
+    <section class="classes" id="classes">
+      <div class="container">
+        <div class="content">
+          <div class="box img wow slideInLeft">
+            <img src="images/class2.png" alt="classes" />
+          </div>
+          <div class="box text wow slideInRight">
+            <h2>クラス</h2>
+            <p>
+              私たちのフィットネスクラスは、すべてのスキルレベルに対応し、楽しさとチャレンジの完璧なバランスを提供します。
+            </p>
+            <div class="class-items">
+              <div class="item wow bounceInUp">
+                <div class="item-img">
+                  <img src="images/class1.jpg" alt="classes" />
+                  <div class="price">$99</div>
+                </div>
+                <div class="item-text">
+                  <h4>ストレッチトレーニング</h4>
+                  <p>
+                    すべてのレベルのために設計されたストレッチクラスで柔軟性を向上させ、怪我のリスクを減らしましょう。
+                  </p>
+                  <a href="">詳細を見る</a>
+                </div>
+              </div>
+              <div class="item wow bounceInUp">
+                <div class="item-text">
+                  <h4>筋力とコンディショニング</h4>
+                  <p>筋力と持久力を構築するための包括的なプログラムです。</p>
+                  <a href="">詳細を見る</a>
+                </div>
+                <div class="item-img">
+                  <img src="images/class1.jpg" alt="classes" />
+                  <div class="price">$99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Classes -->
+
+    <!-- Start Today -->
+    <section class="start-today">
+      <div class="container">
+        <div class="content">
+          <div class="box text wow slideInLeft">
+            <h2>今日からトレーニングを始めましょう</h2>
+            <p>
+              パーソナライズされたトレーニングプランにサインアップするか、グループクラスに参加して、より健康的なあなたへの第一歩を踏み出しましょう。
+            </p>
+            <a href="" class="btn">今すぐ始める</a>
+          </div>
+          <div class="box img wow slideInRight">
+            <img src="images/gallery4.jpg" alt="start today" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Start Today -->
+
+    <!-- Start Schedule -->
+    <section class="schedule" id="schedule">
+      <div class="container">
+        <div class="content">
+          <div class="box text wow slideInLeft">
+            <h2>クラススケジュール</h2>
+            <p>
+              あなたのニーズに合った柔軟なクラススケジュールで、週を計画しましょう。
+            </p>
+            <img src="images/schedule1.png" alt="schedule" />
+          </div>
+          <div class="box timing wow slideInRight">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td class="day">月曜日</td>
+                  <td><strong>9:00 AM</strong></td>
+                  <td>
+                    ボディビルディング <br />
+                    9:00から10:00まで
+                  </td>
+                  <td>ルームNo:210</td>
+                </tr>
+                <tr>
+                  <td class="day">火曜日</td>
+                  <td><strong>9:00 AM</strong></td>
+                  <td>
+                    ボディビルディング <br />
+                    9:00から10:00まで
+                  </td>
+                  <td>ルームNo:210</td>
+                </tr>
+                <!-- 他の曜日も必要に応じて追加 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Schedule -->
+
+    <!-- Start Gallery -->
+    <section class="gallery" id="gallery">
+      <h2>ワークアウトギャラリー</h2>
+      <div class="content">
+        <div class="box wow slideInLeft">
+          <img src="images/gallery1.jpg" alt="gallery" />
+        </div>
+        <div class="box wow slideInRight">
+          <img src="images/gallery2.jpg" alt="gallery" />
+        </div>
+        <div class="box wow slideInLeft">
+          <img src="images/gallery3.jpg" alt="gallery" />
+        </div>
+        <div class="box wow slideInRight">
+          <img src="images/gallery4.jpg" alt="gallery" />
+        </div>
+      </div>
+    </section>
+    <!-- End Gallery -->
+
+    <!-- Start Price -->
+    <section class="price-package" id="price">
+      <div class="container">
+        <h2>プランを選ぶ</h2>
+        <p class="title-p">
+          基本的なアクセスからプレミアムサービスまで、あなたにぴったりのメンバーシッププランを見つけましょう。
+        </p>
+        <div class="content">
+          <div class="box wow bounceInUp">
+            <div class="inner">
+              <div class="price-tag">$59/Month</div>
+              <div class="img">
+                <img src="images/price1.jpg" alt="price" />
+              </div>
+              <div class="text">
+                <h3>ボディビルディングトレーニング</h3>
+                <p>WiFi無料</p>
+                <p>月額契約</p>
+                <p>時間制限なし</p>
+                <p>ジムとカーディオ</p>
+                <p>サービスロッカールーム</p>
+                <a href="" class="btn">今すぐ参加</a>
+              </div>
+            </div>
+          </div>
+          <div class="box wow bounceInUp" data-wow-delay="0.2s">
+            <div class="inner">
+              <div class="price-tag">$69/Month</div>
+              <div class="img">
+                <img src="images/price2.jpg" alt="price" />
+              </div>
+              <div class="text">
+                <h3>ボディビルディングトレーニング</h3>
+                <p>WiFi無料</p>
+                <p>月額契約</p>
+                <p>時間制限なし</p>
+                <p>ジムとカーディオ</p>
+                <p>サービスロッカールーム</p>
+                <a href="" class="btn">今すぐ参加</a>
+              </div>
+            </div>
+          </div>
+          <div class="box wow bounceInUp" data-wow-delay="0.4s">
+            <div class="inner">
+              <div class="price-tag">$99/Month</div>
+              <div class="img">
+                <img src="images/price3.jpg" alt="price" />
+              </div>
+              <div class="text">
+                <h3>ボディビルディングトレーニング</h3>
+                <p>WiFi無料</p>
+                <p>月額契約</p>
+                <p>時間制限なし</p>
+                <p>ジムとカーディオ</p>
+                <p>サービスロッカールーム</p>
+                <a href="" class="btn">今すぐ参加</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Price -->
+
+    <!-- Start Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="content">
+          <div class="box form wow slideInLeft">
+            <form>
+              <input type="text" placeholder="名前を入力" />
+              <input type="text" placeholder="メールアドレスを入力" />
+              <input type="text" placeholder="電話番号を入力" />
+              <textarea placeholder="メッセージを入力"></textarea>
+              <button type="submit">メッセージを送信</button>
+            </form>
+          </div>
+          <div class="box text wow slideInRight">
+            <h2>ジムとの連絡を取る</h2>
+            <p class="title-p">
+              メンバーシップ、クラス、またはパーソナルトレーニングプログラムについて質問がある場合は、お問い合わせください。
+            </p>
+            <div class="info">
+              <ul>
+                <li>
+                  <span class="fa fa-map-marker"></span> Gali no 11, House no
+                  11, ラホール
+                </li>
+                <li><span class="fa fa-phone"></span> 92 9999999999</li>
+                <li><span class="fa fa-envelope"></span> info@gym.com</li>
+              </ul>
+            </div>
+            <div class="social">
+              <a href=""><span class="fa fa-facebook"></span></a>
+              <a href=""><span class="fa fa-linkedin"></span></a>
+              <a href=""><span class="fa fa-skype"></span></a>
+              <a href=""><span class="fa fa-youtube-play"></span></a>
+            </div>
+
+            <div class="copy">Powered by &copy; Fitness Club</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact -->
+
+    <!-- jquery -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-  // Get the modal and close button elements
-  const modal = document.getElementById('modal2');
-  const closeButton = document.getElementById('close-btn2');
-  const modalContent = document.querySelector('.modal-content2');
+      $(document).ready(function () {
+        $(".ham-burger, .nav ul li a").click(function () {
+          $(".nav").toggleClass("open");
 
-  // Disable scrolling on body when modal is visible
-  document.body.classList.add('scroll-lock');
+          $(".ham-burger").toggleClass("active");
+        });
+        $(".accordian-container").click(function () {
+          $(".accordian-container").children(".body").slideUp();
+          $(".accordian-container").removeClass("active");
+          $(".accordian-container")
+            .children(".head")
+            .children("span")
+            .removeClass("fa-angle-down")
+            .addClass("fa-angle-up");
+          $(this).children(".body").slideDown();
+          $(this).addClass("active");
+          $(this)
+            .children(".head")
+            .children("span")
+            .removeClass("fa-angle-up")
+            .addClass("fa-angle-down");
+        });
 
-  // Function to close the modal and enable scrolling
-  function closeModal() {
-    modal.style.visibility = 'hidden';
-    document.body.classList.remove('scroll-lock');
-  }
+        $(".nav ul li a, .go-down").click(function (event) {
+          if (this.hash !== "") {
+            event.preventDefault();
 
-  // Close the modal if the close button is clicked
-  closeButton.addEventListener('click', closeModal);
+            var hash = this.hash;
 
-  // Close the modal if user clicks on the modal background (overlay)
-  modal.addEventListener('click', function (event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
+            $("html,body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                window.location.hash = hash;
+              }
+            );
 
-  // Close the modal if user clicks on the modal body (content area)
-  modalContent.addEventListener('click', closeModal);
-</script>
-</body>
-
+            // add active class in navigation
+            $(".nav ul li a").removeClass("active");
+            $(this).addClass("active");
+          }
+        });
+      });
+    </script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      wow = new WOW({
+        animateClass: "animated",
+        offset: 0,
+      });
+      wow.init();
+    </script>
+    <!-- Popup Modal -->
+    <div id="popupModal" class="popup-modal">
+      <div class="popup-content">
+        <a href="#" class="close-btn">&times;</a>
+        <h2 style="font-size: 36px">フィットネスクラブへようこそ！</h2>
+        <p style="font-size: 30px">
+          今日からフィットネスの旅を始めましょう！
+          私たちは、あなたがどのようにして効果的にフィットネスの目標を達成するかを理解するためのパーソナライズされた相談を提供しています。
+        </p>
+        <a href="#contact" class="btn"
+          ><span style="font-size: 37px">今すぐ参加</span></a
+        >
+      </div>
+    </div>
+  </body>
 </html>
