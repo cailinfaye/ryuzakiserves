@@ -10,6 +10,54 @@
         visibility: hidden;
       }
     </style>
+    <style>
+  /* Style for the modal background */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    z-index: 1000;
+  }
+
+  /* Style for the modal box */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Style for the close button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  /* CSS to prevent scrolling */
+  .scroll-lock {
+    overflow: hidden;
+  }
+
+  /* Black text for modal heading and description */
+  .modal-content h2, .modal-content p {
+    color: black;
+  }
+</style>
   </head>
 
   <body onload="location.href='#popupModal'">
@@ -457,19 +505,45 @@
       });
       wow.init();
     </script>
-    <!-- Popup Modal -->
-    <div id="popupModal" class="popup-modal">
-      <div class="popup-content">
-        <a href="#" class="close-btn">&times;</a>
-        <h2 style="font-size: 36px">フィットネスクラブへようこそ！</h2>
-        <p style="font-size: 30px">
-          今日からフィットネスの旅を始めましょう！
-          私たちは、あなたがどのようにして効果的にフィットネスの目標を達成するかを理解するためのパーソナライズされた相談を提供しています。
-        </p>
         <a href="#contact" class="btn"
           ><span style="font-size: 37px">今すぐ参加</span></a
         >
       </div>
     </div>
+    <div class="modal-overlay" id="modal">
+  <div class="modal-content">
+    <button class="close-btn" id="close-btn">X</button>
+    <h2> 私たちはあなたにフィットする準備ができています</h2>
+    <p>私たちのフィットネスクラスは、すべてのスキルレベルに対応し、楽しさとチャレンジの完璧なバランスを提供します。</p>
+  </div>
+</div>
+    <script>
+  // Get the modal and close button elements
+  const modal = document.getElementById('modal');
+  const closeButton = document.getElementById('close-btn');
+  const modalContent = document.querySelector('.modal-content');
+
+  // Disable scrolling on body when modal is visible
+  document.body.classList.add('scroll-lock');
+
+  // Function to close the modal and enable scrolling
+  function closeModal() {
+    modal.style.visibility = 'hidden';
+    document.body.classList.remove('scroll-lock');
+  }
+
+  // Close the modal if the close button is clicked
+  closeButton.addEventListener('click', closeModal);
+
+  // Close the modal if user clicks on the modal background (overlay)
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close the modal if user clicks on the modal body (content area)
+  modalContent.addEventListener('click', closeModal);
+</script>
   </body>
 </html>
